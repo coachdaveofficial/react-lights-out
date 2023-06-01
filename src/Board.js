@@ -35,10 +35,10 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
     let initialBoard = [];
     // TODO: create array-of-arrays of true/false values
     let width = Array.from({length: ncols});
-    // populate width with true or false items
-    width = width.map(() => Math.random() <= chanceLightStartsOn);
     for (let i = 0; i < nrows; i++) {
-      initialBoard.push(width);
+      // populate width with true or false items
+      width = width.map(() => Math.random() <= chanceLightStartsOn);
+      initialBoard.push(width.slice());
     }
     return initialBoard;
   }
